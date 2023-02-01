@@ -7,8 +7,7 @@
         <v-card-title class="headline">Template de App Djàvue </v-card-title>
         <v-card-text>
           <p>
-            Djávue tem Vue 3 + Vuetify 3 no frontend e Django no Backend, tudo já configurado e
-            pronto para uso em Produção.
+            Djávue tem Vue 3 + Vuetify 3 no frontend e Django no Backend, tudo já configurado e pronto para uso em Produção.
           </p>
           <h3 class="pt-6">Links úteis:</h3>
           <v-btn

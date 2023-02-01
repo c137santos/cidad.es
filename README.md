@@ -29,18 +29,8 @@ Vamos precisar criar o projeto e fazer o build de tudo, utilize os comandos abai
 ```bash
 # Digite o comando abaixo, caso ainda não tenha o comando vue
 $ npm install -g @vue/cli
-# install dependencies
-$ npm install
-# Crie uma virtualenv
-$ virtualenv venv
-$ source venv/bin/activate
-# Instale as dependências
-$ cd consultorIbge
 # Mude para pasta
 $ cd consultorIbge
-# Instale as dependências para que possa haver uma iteração correta com container
-$ pip install -r requiriments-dev.txt
-$ pip install -r requiriments.txt
 # Para criar os containers
 $ docker compose build
 # Para iniciar os containers
