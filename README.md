@@ -134,3 +134,6 @@ $ docker-compose -f docker-compose.yml -f docker-compose.apimock.yml up frontend
 Para consultar os logs dos containers existe:
 
 docker logs -f municipios-backend-1# cidad.es
+
+
+![Planejamento-de-telas-db](./images/planejamento.jpeg)
