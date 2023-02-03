@@ -33,8 +33,7 @@ class UF(models.Model):
 
     def to_dict_json(self):
         return {
-            'id': self.id,
-            'metadado': self.metadado,
+            'metadado': self.metadado.to_dict_json(),
             'nome': self.nome,
             'sigla': self.sigla,            
             'id_ibge': self.id_ibge,            
@@ -53,10 +52,9 @@ class Municipio(models.Model):
 
     def to_dict_json(self):
         return {
-            'id': self.id,
-            'metadado': self.metadado,
+            'metadado': self.metadado.to_dict_json(), #instancia de metadado não é algo serializavel para json, pq só pode ser a estrutura dicionário e lista. Ou tipos primitivos. 
             'nome': self.nome,
-            'uf_id': self.uf_id,
+            'uf': self.uf.to_dict_json(),
             'uf_sigla': self.uf_sigla,
             'id_ibge': self.id_ibge,  
         }
