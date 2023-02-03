@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import Metadado, UF, Municipio
 
-# Register your models here.
+admin.site.register(Metadado)
+
+admin.site.register(UF)
+
+admin.site.register(Municipio)

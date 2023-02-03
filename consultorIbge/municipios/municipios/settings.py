@@ -54,8 +54,6 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "municipios.base",
-    "municipios.accounts",
-    "municipios.tasks",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -147,50 +145,3 @@ STATIC_ROOT = os.getenv("DJANGO_STATIC_ROOT", os.path.join(BASE_DIR, "static"))
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-# LOGGING = {
-#     'version': 1,
-#     'formatters': {
-#         'verbose': {
-#             'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-#         },
-#         'simple': {
-#             'format': '%(levelname)s %(message)s'
-#         },
-#     },
-#     'filters': {
-#         'require_debug_false': {
-#             '()': 'django.utils.log.RequireDebugFalse',
-#         }
-#     },
-#     'handlers': {
-#         'console': {
-#             'level': 'DEBUG',
-#             'class': 'logging.StreamHandler',
-#             'formatter': 'simple'
-#         },
-#         'file': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'filename': os.getenv('DJANGO_LOG_FILE', './municipios.log'),
-#             'formatter': 'simple'
-#         },
-#     },
-#     'loggers': {
-#         '': {
-#             'handlers': ['file'],
-#             'level': 'DEBUG' if DEBUG else 'INFO',
-#             'propagate': True,
-#         },
-#         'django': {
-#             'handlers': ['file'],
-#             'level': 'DEBUG' if DEBUG else 'INFO',
-#             'propagate': True,
-#         },
-#     }
-# }
-
-# if DEBUG:
-#     # make all loggers use the console.
-#     for logger in LOGGING['loggers']:
-#         LOGGING['loggers'][logger]['handlers'] = ['console']
