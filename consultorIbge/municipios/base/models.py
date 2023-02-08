@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# Melhorar região para que tenha opções
 
 class Metadado(models.Model):
     regiao = models.CharField(max_length=25, blank=True)
@@ -52,7 +52,7 @@ class Municipio(models.Model):
 
     def to_dict_json(self):
         return {
-            'metadado': self.metadado.to_dict_json(), #instancia de metadado não é algo serializavel para json, pq só pode ser a estrutura dicionário e lista. Ou tipos primitivos. 
+            'metadado': self.metadado.to_dict_json(), 
             'nome': self.nome,
             'uf': self.uf.to_dict_json(),
             'uf_sigla': self.uf_sigla,
