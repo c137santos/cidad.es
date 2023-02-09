@@ -14,4 +14,16 @@ export default {
         })
     })
   },
+  buscarMunicipios: (q) => {
+    return new Promise((resolve, reject) => {
+      api
+        .get("api/search/municipio/", {params:{"q":q}})
+        .then((response) => {
+          return resolve(response.data)
+        })
+        .catch((error) => {
+          return reject(error)
+        })
+    })
+}
 }

@@ -14,7 +14,9 @@ def search(request):
 
 def search_municipio(request):
     qtext = request.GET.get("q")
-    q = Q(nome__icontains=qtext) | Q(id_ibge=qtext) | Q(uf_sigla=qtext)
+    q = Q(nome__icontains=qtext) | Q(uf_sigla=qtext)
+    if qtext.isdigit():
+        q = q | Q(id_ibge=qtext)
     municipios = Municipio.objects.filter(q)
     response = JsonResponse({'resultados': [municipio.to_dict_json() for municipio in municipios]})
     return response
