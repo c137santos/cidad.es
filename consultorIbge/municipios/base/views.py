@@ -4,7 +4,9 @@ from django.db.models import Q
 
 def search(request):
     qtext = request.GET.get("q")
-    q = Q(nome__icontains=qtext) | Q(id_ibge=qtext) | Q(sigla=qtext)
+    q = Q(nome__icontains=qtext) | Q(sigla=qtext)
+    if qtext.isdigit():
+        q = q | Q(id_ibge=qtext) 
     ufs = UF.objects.filter(q)
     response = JsonResponse({'resultados': [uf.to_dict_json() for uf in ufs]})
     return response
