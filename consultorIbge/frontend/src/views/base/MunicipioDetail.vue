@@ -8,7 +8,6 @@
       idh: {{ idh }}
       extensaoTerritorial: {{ extensaoTerritorial }}
       populacaoEstimada: {{ populacaoEstimada }}
-      municipios: {{ municipios }}
       densidade_demografica: {{ densidade_demografica }}
   </div>
 </template>
@@ -31,7 +30,8 @@ export default {
     }
   },
   mounted() {
-    api.buscaDetailEstado(this.id_ibge).then((response)=>{ this.nome = response.nome
+    api.buscaDetailMunicipio(this.id_ibge).then((response)=>{
+      this.nome = response.nome
       this.sigla = response.sigla
       this.regiao = response.metadado.regiao
       this.pib = response.metadado.pib

@@ -25,5 +25,29 @@ export default {
           return reject(error)
         })
     })
-}
+},
+  buscaDetailEstado: (id_ibge) => {
+    return new Promise((resolve, reject) => {
+      api
+        .get(`api/uf/${id_ibge}/detail/`)
+        .then((response) => {
+          return resolve(response.data)
+        })
+        .catch((error) => {
+          return reject(error)
+        })
+    })
+},
+  buscaDetailMunicipio: (id_ibge) => {
+    return new Promise((resolve, reject) => {
+      api
+        .get(`api/municipio/${id_ibge}/detail/`)
+        .then((response) => {
+          return resolve(response.data)
+        })
+        .catch((error) => {
+          return reject(error)
+        })
+    })
+},
 }

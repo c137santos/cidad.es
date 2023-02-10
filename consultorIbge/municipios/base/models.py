@@ -36,7 +36,8 @@ class UF(models.Model):
             'metadado': self.metadado.to_dict_json(),
             'nome': self.nome,
             'sigla': self.sigla,            
-            'id_ibge': self.id_ibge,            
+            'id_ibge': self.id_ibge, 
+            'total_municipios': Municipio.objects.filter(uf=self).count()           
         }
 
     def __str__(self):

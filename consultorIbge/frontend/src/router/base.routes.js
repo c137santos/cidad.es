@@ -1,7 +1,9 @@
 // Composables
 import EmptyLayout from "@/layouts/default/EmptyLayout.vue"
 import HomeView from "@/views/base/HomeView.vue"
-import GetStartedView from "@/views/base/GetStartedView.vue"
+import EstadoDetail from "@/views/base/EstadoDetail.vue"
+import MunicipioDetail from "@/views/base/MunicipioDetail.vue"
+
 
 export default [
   {
@@ -14,9 +16,14 @@ export default [
         component: HomeView,
       },
       {
-        path: "getstarted",
-        name: "base-getstarted",
-        component: GetStartedView,
+        path: "estado/:id_ibge",
+        name: "estado-detail",
+        component: EstadoDetail,
+      },
+      {
+        path: "municipio/:id_ibge",
+        name: "municipio-detail",
+        component: MunicipioDetail,
       },
     ],
   },

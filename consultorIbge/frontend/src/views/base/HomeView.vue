@@ -6,14 +6,18 @@
   <div>
     Estado
     <div v-for="uf in estados" :key="uf"> 
-      {{ uf.nome }} - {{ uf.sigla }}
-      {{ uf.id_ibge }}
-      {{ uf.metadado.regiao }}
+      <div @click="abrirEstado(uf.id_ibge)">
+        {{ uf.id_ibge }}
+        {{ uf.nome }} - {{ uf.sigla }}
+        {{ uf.metadado.regiao }}
+      </div>
      </div>
      Municípios
-    <div v-for="mcp in municipios" :key="mcp"> 
-      {{ mcp.nome }}
-      {{mcp.uf_sigla }}
+    <div v-for="mcp in municipios" :key="mcp">
+      <div @click="abrirMunicipio(mcp.id_ibge)">
+        {{ mcp.nome }}
+        {{mcp.uf_sigla }}    
+      </div>
     </div>
   </div>
   </div>
@@ -32,6 +36,12 @@ export default {
     }
   },
   methods: {
+    abrirEstado(id_ibge){
+      this.$router.push({name: "estado-detail", params:{"id_ibge":id_ibge}})
+    },
+    abrirMunicipio(id_ibge){
+      this.$router.push({name: "municipio-detail", params:{"id_ibge":id_ibge}})
+    },
     async buscar(){
       const resultadoDeEstados = await api.buscarEstado(this.qtext)
       this.estados = resultadoDeEstados.resultados
