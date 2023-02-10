@@ -1,14 +1,18 @@
 <template>
   <div>
-<div> {{ nome }}</div>
-      nome: {{ nome }}
-      sigla: {{ sigla }}
-      regiao: {{ regiao }}
-      pib: {{ pib }}
-      idh: {{ idh }}
-      extensaoTerritorial: {{ extensaoTerritorial }}
-      populacaoEstimada: {{ populacaoEstimada }}
-      densidade_demografica: {{ densidade_demografica }}
+    <v-card class="mx-auto " max-width="344" >
+      <v-card-text >
+      <div>Município de {{ nome }}</div>
+        <p class="text-h4 text--primary">{{ nome }} - {{ sigla }} </p>
+        <p>sigla: {{ sigla }} </p>
+        <p>regiao: {{ regiao }} </p>
+        <p>pib: {{ pib }} </p>
+        <p>idh: {{ idh }}</p>
+        <p>extensaoTerritorial: {{ extensaoTerritorial }} </p>
+        <p>populacaoEstimada: {{ populacaoEstimada }} </p>
+        <p>densidade_demografica: {{ densidade_demografica }}</p>
+      </v-card-text>
+    </v-card>
   </div>
 </template>
 
