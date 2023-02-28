@@ -1,15 +1,21 @@
 <template>
-  <div>
-<div> {{ nome }}</div>
-      nome: {{ nome }}
-      sigla: {{ sigla }}
-      regiao: {{ regiao }}
-      pib: {{ pib }}
-      idh: {{ idh }}
-      extensaoTerritorial: {{ extensaoTerritorial }}
-      populacaoEstimada: {{ populacaoEstimada }}
-      municipios: {{ municipios }}
-      densidade_demografica: {{ densidade_demografica }}
+    <div>
+    <div class="text-center titulo">
+      <h1>Informações sobre Estado de {{ nome }}</h1>
+    </div>
+    <v-card class="mx-auto " max-width="500" >
+      <v-card-text >
+        <p class="text-h4 text--primary">{{ nome }} - {{ sigla }} </p>
+        <p>Sigla: {{ sigla }} </p>
+        <p>Região: {{ regiao }} </p>
+        <p>PIB: {{ pib }} </p>
+        <p>IDH: {{ idh }}</p>
+        <p>Extensão Territorial: {{ extensaoTerritorial }} </p>
+        <p>População Estimada: {{ populacaoEstimada }} </p>
+        <p>Densidade Demográfica: {{ densidade_demografica }}</p>
+      </v-card-text>
+    </v-card>
+    <p class="rodapezim"> Acesse nossa API por meio de /api/estado/{{id_ibge}}/detail/</p>
   </div>
 </template>
 
@@ -49,3 +55,15 @@ computed : {
   }    
 }
 </script>
+<style scoped>
+.rodapezim{
+  font-size: 20px;
+  position: absolute;
+  margin-bottom: 0 ;
+}
+
+p{
+  font-size: 25px;
+  margin: 2%;
+}
+</style>

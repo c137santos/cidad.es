@@ -29,12 +29,14 @@ Vamos precisar criar o projeto e fazer o build de tudo, utilize os comandos abai
 ```bash
 # Digite o comando abaixo, caso ainda não tenha o comando vue
 $ npm install -g @vue/cli
-# Mude para pasta
+# Instale as dependências do front
+$ npm install
+# Mude para pasta do projeto
 $ cd consultorIbge
 # Para criar os containers
 $ docker compose build
 # Para iniciar os containers
-$ docker compose up -d backend frontend
+$ docker compose up -d
 ```
 
 Depois de fazer o build e iniciar todos containers, fazendo um `docker ps` é possível ver que temos os seguintes serviços rodando:

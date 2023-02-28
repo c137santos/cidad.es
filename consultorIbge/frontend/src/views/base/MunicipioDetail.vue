@@ -1,18 +1,21 @@
 <template>
   <div>
-    <v-card class="mx-auto " max-width="344" >
+    <div class="text-center titulo">
+      <h1>Informações sobre Município de {{ nome }}</h1>
+    </div>
+    <v-card class="mx-auto text-center cardzinhos" max-width="500" >
       <v-card-text >
-      <div>Município de {{ nome }}</div>
         <p class="text-h4 text--primary">{{ nome }} - {{ sigla }} </p>
-        <p>sigla: {{ sigla }} </p>
-        <p>regiao: {{ regiao }} </p>
-        <p>pib: {{ pib }} </p>
-        <p>idh: {{ idh }}</p>
-        <p>extensaoTerritorial: {{ extensaoTerritorial }} </p>
-        <p>populacaoEstimada: {{ populacaoEstimada }} </p>
-        <p>densidade_demografica: {{ densidade_demografica }}</p>
+        <p>Sigla: {{ sigla }} </p>
+        <p>Região: {{ regiao }} </p>
+        <p>PIB: {{ pib }} </p>
+        <p>IDH: {{ idh }}</p>
+        <p>Extensão Territorial: {{ extensaoTerritorial }} </p>
+        <p>População Estimada: {{ populacaoEstimada }} </p>
+        <p>Densidade demográfica: {{ densidade_demografica }}</p>
       </v-card-text>
     </v-card>
+    <p class="rodapezim"> Acesse nossa API por meio de /api/municipio/{{id_ibge}}/detail/</p>
   </div>
 </template>
 
@@ -53,3 +56,26 @@ computed : {
   }    
 }
 </script>
+
+<style>
+p{
+  font-size: 25px;
+  margin: 2%;
+}
+
+.cardzinhos{
+  margin: 2%;
+}
+
+.titulo{
+  margin: 5%;
+
+}
+
+.rodapezim{
+  font-size: 20px;
+  position: absolute;
+  margin-bottom: 0 ;
+}
+
+</style>
