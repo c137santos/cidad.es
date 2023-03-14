@@ -1,10 +1,10 @@
 <template>
     <div>
-    <div class="text-center titulo">
-      <h1>Informações sobre Estado de {{ nome }}</h1>
+    <div class="text-center titulo ">
+      <h1>Informações sobre a unidade federativa {{ nome }}</h1>
     </div>
-    <v-card class="mx-auto " max-width="500" >
-      <v-card-text >
+    <v-card class="mx-auto" max-width="500" >
+      <v-card-text class="olar">
         <p class="text-h4 text--primary">{{ nome }} - {{ sigla }} </p>
         <p>Sigla: {{ sigla }} </p>
         <p>Região: {{ regiao }} </p>
@@ -66,4 +66,5 @@ p{
   font-size: 25px;
   margin: 2%;
 }
+
 </style>

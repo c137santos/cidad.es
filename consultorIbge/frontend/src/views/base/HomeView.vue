@@ -11,8 +11,8 @@
 
     <div>
 
-    <v-card class="mx-auto cardzinhos" max-width="344">
-      <v-card-text v-for="uf in estados" :key="uf" >
+    <v-card class="mx-auto estado" max-width="344">
+      <v-card-text class="EstadoNaHome" v-for="uf in estados" :key="uf">
       <div>Unidade Federativa do {{ uf.metadado.regiao }}</div>
         <p class="text-h4 text--primary">{{ uf.nome }} - {{ uf.sigla }} </p>
         <v-btn @click="abrirEstado(uf.id_ibge)"> Mais detalhes </v-btn>
@@ -72,15 +72,18 @@ export default {
 }
 .centralizadora {
   display: flex;
-  margin-top: 5%;
+  margin: 5%;
   flex-direction: column;
   align-items: center;
 }
 
-.cardzinhos{
-  margin: 2%;
-}
 .titulo{
   margin-top: 3%;
 }
+
+.v-card-text{
+    background-color: grey;
+    margin: 15px;
+}
+
 </style>
